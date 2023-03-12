@@ -27,6 +27,7 @@
 }
 
 .mem-container {
+   
   height: 0;
   max-height: 0;
   width: 100%;
@@ -51,6 +52,7 @@
 
 .img-mem {
   width: 50%;
+  padding: 20px 0;
 }
 
 .title-mem {
