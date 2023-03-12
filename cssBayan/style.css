@@ -11,9 +11,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 32px;
 }
 .container {
-  width: 90vw;
+  width: 80vw;
   display: block;
   cursor: pointer;
   font-size: 22px;
@@ -27,7 +28,6 @@
 }
 
 .mem-container {
-   
   height: 0;
   max-height: 0;
   width: 100%;
@@ -42,24 +42,33 @@
 
 .container:hover .mem-container {
   height: 100%;
-  max-height: 500px;
+  max-height: 700px;
 }
 
 .container input:checked ~ .mem-container {
   height: 100%;
-  max-height: 500px;
+  max-height: 700px;
+}
+
+.container:hover .img-mem {
+  width: 50%;
+}
+
+.container input:checked ~ .mem-container > .img-mem {
+  width: 50%;
 }
 
 .img-mem {
-  width: 50%;
+  width: 0;
   padding: 20px 0;
+  transition: width 0.3s;
 }
 
 .title-mem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
 }
 
 .close-icon {
@@ -75,4 +84,40 @@
 
 .container input:checked ~ .title-mem > .close-icon {
   transform: rotate(0);
+}
+
+h1 {
+  margin-top: 1.5em;
+  font-size: 2.5em;
+}
+
+.container input:checked ~ .title-mem h2 {
+  color: coral;
+}
+
+@media (max-width: 820px) {
+  h1 {
+    margin-top: 1.5em;
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  .close-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    margin-top: 1.5em;
+    font-size: 1em;
+  }
+  h2 {
+    font-size: 0.5em;
+  }
+  .close-icon {
+    width: 10px;
+    height: 10px;
+  }
 }
