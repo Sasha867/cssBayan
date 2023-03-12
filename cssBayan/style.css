@@ -11,13 +11,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 32px;
 }
+
 .container {
   width: 80vw;
   display: block;
   cursor: pointer;
-  font-size: 22px;
 }
 
 .container input {
@@ -28,26 +27,19 @@
 }
 
 .mem-container {
-  height: 0;
   max-height: 0;
   width: 100%;
   display: flex;
   overflow: hidden;
-  transition: all 0.3s;
-}
-
-.mem-container img {
-  margin: 0 auto;
+  transition: all 0.5s;
 }
 
 .container:hover .mem-container {
-  height: 100%;
-  max-height: 700px;
+  max-height: 50vh;
 }
 
 .container input:checked ~ .mem-container {
-  height: 100%;
-  max-height: 700px;
+  max-height: 50vh;
 }
 
 .container:hover .img-mem {
@@ -60,8 +52,9 @@
 
 .img-mem {
   width: 0;
-  padding: 20px 0;
-  transition: width 0.3s;
+  padding: 20px 0 0;
+  margin: 0 auto;
+  transition: width 0.5s;
 }
 
 .title-mem {
@@ -87,12 +80,12 @@
 }
 
 h1 {
-  margin-top: 1.5em;
-  font-size: 2em;
+  margin-top: 24px;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.4em;
 }
 
 .container input:checked ~ .title-mem h2 {
@@ -101,7 +94,6 @@ h2 {
 
 @media (max-width: 820px) {
   h1 {
-    margin-top: 1.5em;
     font-size: 1.5em;
   }
   h2 {
@@ -111,13 +103,16 @@ h2 {
     width: 15px;
     height: 15px;
   }
-  .img-mem {
-    min-width: 50%;
+  .container:hover .img-mem {
+    width: 50%;
+  }
+
+  .container input:checked ~ .mem-container > .img-mem {
+    width: 50%;
   }
 }
 @media (max-width: 400px) {
   h1 {
-    margin-top: 1.5em;
     font-size: 1em;
   }
   h2 {
@@ -127,7 +122,11 @@ h2 {
     width: 10px;
     height: 10px;
   }
-  .img-mem {
-    min-width: 60%;
+  .container:hover .img-mem {
+    width: 60%;
+  }
+
+  .container input:checked ~ .mem-container > .img-mem {
+    width: 60%;
   }
 }
